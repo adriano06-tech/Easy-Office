@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="/work/see_another_perfil/style.css">
+
+<h1 id="profile_apresentantion">Este é o perfil de {{profile.first_name}}, {{user.first_name}}</h1>
+<a id="linkGetBack" href="/">
+    <button class="btn btn-primary">
+        Voltar
+    </button>
+</a>
+
+<input style="display: none;" value="{{profile.email}}" id="copy_profile_email"/>
+<input style="display: none;" value="{{profile.tel}}" id="copy_profile_tel"/>
+
+
+<div style="border-radius: 20px;" class="card card-body regular shadow mt-4">
+    <h2 id="profile_name">{{profile.user_name}}</h2>
+    <p id="profile_email" class="profile_description">
+        <span class="profile_description_label">
+            Email:
+        </span>
+        {{profile.email}}
+    </p>
+    <p id="profile_tel" class="profile_description">
+        <span class="profile_description_label">
+            Tel:
+        </span>
+        {{profile.tel}}
+    </p>
+    <button onclick="copyProfileEmail()" class="btn btn-primary">
+        Copiar email de {{profile.first_name}}
+    </button>
+    <button onclick="copyProfileTel()" class="btn btn-primary mt-2">
+        Copiar número de telefone de {{profile.first_name}}
+    </button>
+</div>
+
+
+
+<script src="/work/see_another_perfil/scripts.js"></script>

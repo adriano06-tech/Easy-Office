@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="/login/form_create_account/style.css">
+
+<div class="cointaner_advice">
+    <h2 class="title_advice">
+        Você está prestes a criar uma conta, só preencha este formulário. É rapidinho!
+    </h2>
+</div>
+
+<div class="card-body card regular shadow mt-4 form_cointaner">
+    <form action="/login/createAccount" method="post">
+        
+        <div class="get_name card-body">
+            <label for="first_name">Nome:</label>
+                <input type="text" id="first_name" name="first_name" aria-label="First name" class="form-control">
+            <label for="last_name">Sobrenome:</label>
+                <input type="text" name="last_name" aria-label="Last name" id="last_name" class="form-control">
+        </div>
+        
+        <div class="get_commercial_informations card-body">
+            <label for="user_tel">Telefone:</label>
+                <input type="tel" name="user_tel"
+                    class="form-control mt-2" id="user_tel"
+                    pattern="+[0-9]{2} [0-9]{5}-[0-9]{4}"
+                    placeholder="+55 91234-5678">
+                <small>Formato: +55 91234-5678</small><br>
+
+
+            <label for="user_email">Email:</label>
+                <input type="email" name="user_email"
+                    class="form-control mt-2" id="user_email">
+
+
+            <label for="user_password">Senha:</label>
+                <input type="password" name="user_password"
+                    class="form-control mt-2" id="user_password">
+            <label for="user_confirm_password">Confirmar Senha:</label>
+                <input type="password" name="user_confirm_password"
+                    class="form-control mt-2" id="user_confirm_password">
+
+        </div>
+        
+        
+        <button type="submit" class="btn btn-primary mt-4">Criar Conta</button>
+
+    </form>
+    
+</div>

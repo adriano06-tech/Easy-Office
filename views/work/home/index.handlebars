@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="/work/home/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.0/socket.io.js" integrity="sha512-+l9L4lMTFNy3dEglQpprf7jQBhQsQ3/WvOnjaN/+/L4i0jOstgScV0q2TjfvRF4V+ZePMDuZYIQtg5T4MKr+MQ==" crossorigin="anonymous"></script>
+<div style="display: none;" id="socket_url">{{socket_url}}</div>
+<div style="display: none;" id="user_id">{{id}}</div>
+
+
+
+<main class="main" id="main">
+    <h1 class="welcome_title">Bem vindo, {{name}}</h1>
+    <div class="card card-body regular shadow main_user_links">
+        <h2 class="questionWhatWantToDo">Oque você deseja fazer hoje?</h2>
+
+        <h4 class="notificationsNumber">Você tem 30 notificações</h4>
+        <div class="notificationsScroll mt-4">
+            <ul class="notificationsList">
+                <li class="notification">Maria te enviou um arquivo</li><li class="notification">Maria te enviou um arquivo</li><li class="notification">Maria te enviou um arquivo</li><li class="notification">Maria te enviou um arquivo</li><li class="notification">Maria te enviou um arquivo</li><li class="notification">Maria te enviou um arquivo</li><li class="notification">Maria te enviou um arquivo</li><li class="notification">Maria te enviou um arquivo</li><li class="notification">Maria te enviou um arquivo</li><li class="notification">Maria te enviou um arquivo</li><li class="notification">Maria te enviou um arquivo</li><li class="notification">Maria te enviou um arquivo</li><li class="notification">Maria te enviou um arquivo</li><li class="notification">Maria te enviou um arquivo</li><li class="notification">Maria te enviou um arquivo</li><li class="notification">Maria te enviou um arquivo</li><li class="notification">Maria te enviou um arquivo</li><li class="notification">Maria te enviou um arquivo</li><li class="notification">Maria te enviou um arquivo</li><li class="notification">Maria te enviou um arquivo</li><li class="notification">Maria te enviou um arquivo</li><li class="notification">Maria te enviou um arquivo</li><li class="notification">Maria te enviou um arquivo</li><li class="notification">Maria te enviou um arquivo</li><li class="notification">Maria te enviou um arquivo</li><li class="notification">Maria te enviou um arquivo</li><li class="notification">Maria te enviou um arquivo</li><li class="notification">Maria te enviou um arquivo</li><li class="notification">Maria te enviou um arquivo</li><li class="notification">Maria te enviou um arquivo</li><li class="notification">Maria te enviou um arquivo</li><li class="notification">Maria te enviou um arquivo</li>
+            </ul>
+        </div>
+
+        <div class="buttonsChoices">
+            <h3 class="titUserChoices">Funções</h3>
+            <button onclick="openChat()" class="btn btn-primary btnUserChoice mt-3"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Abrir chat
+            </button><br>
+            <a style="width: fit-content;" href="/work/changePerfil">
+                <button class="btn btn-primary btnUserChoice mt-3">
+                    Alterar meu Perfil
+                </button>
+            </a><br>
+            <a style="width: fit-content;" href="/work/searchPerfil">
+                <button class="btn btn-primary btnUserChoice mt-3">
+                    Buscar perfil
+                </button>
+            </a><br>
+            
+        </div>
+        
+    </div>
+</main>
+
+
+
+
+<div id="chatCointaner" class="chat card regular chat_close shadow card-body">
+    <h2 class="chat_title">Converse com todos por aqui {{name}}</h2>
+   
+    <div id="messagesShow" class="card-body mt-2">
+        <ul id="listMsg"></ul>
+    </div>
+
+    <input type="text" id="inpMsg" class="form-control mt-2" placeholder="Digite sua mensagem aqui...">
+    <button onclick="sendMsg()"class="btn btn-success btnActionChat mt-3">
+        Enviar mensagem
+    </button>
+
+     <button onclick="autoScrollCoordenate()" id="controlScrollBtn" class="btn btn-primary btnActionChat mt-3">
+        Scroll automático ativado
+    </button>
+        
+    <button class="closeChat btn btn-danger mt-3" onclick="openChat()">
+        Sair do chat
+    </button>
+</div>
+<br>
+
+
+
+<script src="/work/home/scripts.js"></script>

@@ -1,0 +1,12 @@
+.citation{
+    color: rgb(153, 147, 147);
+    font-style: italic;
+}
+
+.card_enter{
+    text-align: center;
+    width: max-content;
+    padding: 30px;
+    border-radius: 20px;
+    margin: auto;
+}

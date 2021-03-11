@@ -1,0 +1,10 @@
+<div class="alert alert-success">
+    <h2>Parabéns {{user_name}}, sua conta foi criada!</h2>
+    <form action="/login/enter" method="post">
+        <div style="display: none;">
+            <input type="text" name="email" value="{{email}}">
+            <input type="text" name="password" value="{{password}}">
+        </div>
+        <button type="submit" class="btn btn-primary">Começar a trabalhar</button>
+    </form>
+</div>

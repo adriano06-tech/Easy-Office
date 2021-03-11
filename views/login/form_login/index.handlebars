@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="/login/form_login/style.css">
+
+<h1>Bem vindo, você já tem uma conta?</h1>
+<h2>
+    Caso tenha só faça o login abaixo, caso o contrário,
+    crie uma conta <a href="/login/createAccount">clicando aqui</a>
+</h2>
+
+<div class="card regular shadow card-body mt-4">
+    <form action="/login/enter" method="post">
+        <h3>Login:</h3>
+        <label class="label_login" for="email">Email cadastrado:</label>
+            <input class="form-control" type="text" id="email" name="email">
+        <label class="label_login" for="password">Senha:</label>
+            <input type="password" class="form-control" id="password" name="password">
+
+        <button type="submit" class="btn btn-primary mt-2">Entrar</button>
+
+    </form>
+</div>
+
+
+<script src="/login/form_login/scripts.js"></script>

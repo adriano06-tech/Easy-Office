@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="/work/change_perfil/style.css">
+
+<div class="card-body card regular shadow mt-4">
+    <form action="/work/changePerfil" method="post">
+        
+        <div class="get_name card-body">
+            <h3>Alterar cadastros</h3>
+            <label for="first_name">Nome:</label>
+                <input value="{{first_name}}" type="text" id="first_name" name="first_name" aria-label="First name" class="form-control">
+            <label for="last_name">Sobrenome:</label>
+                <input value="{{last_name}}" type="text" name="last_name" aria-label="Last name" id="last_name" class="form-control">
+        </div>
+        
+        <div class="get_commercial_informations card-body">
+            <label for="user_tel">Telefone:</label>
+                <input value="{{tel}}" type="tel" name="user_tel"
+                    class="form-control mt-2" id="user_tel"
+                    pattern="+[0-9]{2} [0-9]{2} [0-9]{5}-[0-9]{4}"
+                    placeholder="+55 21 91234-5678">
+                <small>Formato: +55 21 91234-5678</small><br>
+
+
+            <label for="user_email">Email:</label>
+                <input value="{{email}}" type="email" name="user_email"
+                    class="form-control mt-2" id="user_email">
+
+            
+
+        </div>
+        <hr>
+        <label for="password">Senha:</label>
+                <input id="password" type="password" name="password" class="form-control mt-2">
+        
+        <button type="submit" class="btn btn-primary mt-4">Salvar Alterações</button>
+
+    </form>
+    
+</div>
+<br><br><br><br>
+
+
+
+
+
+<script src="/work/change_perfil/scripts.js"></script>

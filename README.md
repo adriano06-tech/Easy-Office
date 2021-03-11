@@ -1,2 +1,2 @@
-# easy-office
- Plataforma de trabalho a distância desenvolvida em node com banco de dados mysql.
+# Easy Office
+ Plataforma de trabalho a distância com back-end desenvolvido em node e banco de dados mysql.

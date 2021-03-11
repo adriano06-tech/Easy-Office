@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="/work/search_user/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.0/socket.io.js" integrity="sha512-+l9L4lMTFNy3dEglQpprf7jQBhQsQ3/WvOnjaN/+/L4i0jOstgScV0q2TjfvRF4V+ZePMDuZYIQtg5T4MKr+MQ==" crossorigin="anonymous"></script>
+
+<div style="display: none;" id="socket_url">{{socket_url}}</div>
+<div id="get_user_id" style="display: none;">{{user.id}}</div>
+
+<h1>Quem você quer achar {{user.first_name}}?</h1>
+
+<div class="card card-body regular shadow">
+    <label id="label_user_name" for="inpFindUser">Nome da pessoa:</label>
+        <input type="text" class="form-control" id="inpFindUser">
+    <div id="result_find_user_cointaner" class="mt-3">
+        <h2 id="say_number_users_find_title">
+            Número de pessoas encontradas: <span id="number_users_find"></span>
+        </h2>
+        <hr>
+        <div id="users_list"></div>
+    </div>
+</div>
+
+
+
+<script src="/work/search_user/scripts.js"></script>

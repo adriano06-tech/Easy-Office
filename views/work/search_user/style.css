@@ -1,0 +1,32 @@
+#label_user_name{
+    font-size: 25px;
+}
+#users_list{
+    text-align: center;
+}
+.userFindCointaner{
+    text-align: center;
+    width: 30%;
+    display: inline-block;
+    color: black;
+}
+.userFindCointaner:hover{
+    color: rgb(0, 174, 255);
+}
+
+@media (max-width: 900px){
+    .userFindCointaner{
+        width: 50%;
+    }
+
+}
+
+@media (max-width: 600px){
+    .userFindCointaner{
+        width: 100%;
+    }
+    #say_number_users_find_title{
+        text-align: center;
+    }
+
+}
