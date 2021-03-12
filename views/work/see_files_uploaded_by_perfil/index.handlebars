@@ -13,11 +13,11 @@
             <h3 style="text-align: center;">
                 Enviado para
                 <a href="/work/renderAnotherPerfil{{receiver_id}}">{{receiver_name}}</a>:
-                <a href="/work/renderFile:{{file_id}}">{{file_formated_name}}</a>
+                <a href="/work/renderFile{{file_id}}">{{file_formated_name}}</a>
             </h3>
             <hr>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{file_description}}</p>
-            <p class="upload_time" style="font-weight: bold; text-align: right;">Enviado em {{upload_hour}}:{{upload_minute}}</p>
+            <p style="font-weight: bold; text-align: right;">Enviado em <span class="upload_time">{{upload_hour}}:{{upload_minute}}</span></p>
         </div>
     {{/each}}
 </div>

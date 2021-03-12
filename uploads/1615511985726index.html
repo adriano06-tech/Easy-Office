@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOGO DE CARRO</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="jogo" onkeypress="tecla()" onkeydown="if(event.key==' '){console.log('freio apertado');pararAcelerar(5)}" onkeyup="if(event.key==' '){console.log('parou o freio');pararFreiar()}" onmousedown="acelerador()" onmouseup="pararAcelerar(1)" onselectstart="return false">
+        <img src="carro.png" alt="" id="carro">
+
+
+        <div id="funcoesJogo">
+        </div>
+        
+    <script src="scripts.js"></script>
+    
+</body>
+</html>

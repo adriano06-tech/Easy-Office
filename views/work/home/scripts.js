@@ -82,12 +82,15 @@
             else{
                 html += `<div class = "msg_cointaner mt-3">`
             }
-                
-                    html += `<p class = "msg_user_name">`
-
+                    if(msg_user_id == user_id){
+                        html += `<a href="changePerfil" class = "msg_user_name">`
+                    }
+                    else{
+                        html += `<a href="/work/renderAnotherPerfil${msg_user_id}" class = "msg_user_name">`
+                    }
                         html += `${name}`
 
-                    html += `</p>`
+                    html += `</a>`
                 
                     html += `<p class = "msg_text">`
 

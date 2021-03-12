@@ -230,8 +230,8 @@ router.use(express.urlencoded({extended:true}))
             return
         }
 
-        connection.query(`SELECT *, HOUR(upload_datetime) as upload_hour, MINUTE(upload_datetime) as upload_minute 
-        FROM vw_uploads WHERE sender_id = ${req.session.user_id}`,
+        connection.query(`SELECT *, DATE(upload_datetime) as upload_date, HOUR(upload_datetime) as upload_hour, MINUTE(upload_datetime) as upload_minute 
+        FROM vw_uploads WHERE sender_id = ${req.session.user_id} ORDER BY upload_datetime DESC`,
         (err, rows, fields)=>{
             if(rows.length == 0){
                 res.render('./work/see_files_uploaded_by_perfil/no_files_founded.handlebars')
@@ -244,6 +244,60 @@ router.use(express.urlencoded({extended:true}))
                 uploads: rows,
                 socket_url: socket_url
             })
+        })
+
+    })
+
+    router.get('/renderFile:upload_id', (req, res)=>{
+        if(!req.session.user_id){
+            res.redirect('/')
+            return
+        }
+        const upload_id = req.params.upload_id
+        const user_id = req.session.user_id
+        connection.query(`SELECT * FROM tb_users WHERE id = ${user_id}`,
+            (err, rows, fields)=>{
+                if(err){
+                    console.log('Houve um erro: ' + err)
+                    res.render('./work/db_connection_error/index.handlebars')
+                    return
+                }
+                const user = rows[0]
+                connection.query(`SELECT * FROM vw_uploads WHERE file_id = ${upload_id}`,
+                (err, rows, fields)=>{
+                    if(err){
+                        console.log('Houve um erro: ' + err)
+                        res.render('./work/db_connection_error/index.handlebars')
+                        return
+                    }
+                    const file = rows[0]
+
+                    if(user_id != file.receiver_id && user_id != file.sender_id){
+                        res.redirect('/')
+                        return
+                    }
+                    const ext = file.file_extension
+                    const list_interpreted_ext = ['.html', '.txt', '.png', '.jpg', '.pdf']
+                    
+                    const file_ext = {
+                        html: ext == '.html',
+                        txt: ext == '.txt',
+                        img: ext == '.png' || ext == 'jpg',
+                        pdf: ext == '.pdf',
+                        not_interpreted: list_interpreted_ext.indexOf(ext) == -1
+                    }
+
+                    res.render('./work/render_file/index.handlebars',
+                    {
+                        file: file,
+                        user: user,
+                        boolean_sender_file: rows[0].sender_id == user.id,
+                        ext: file_ext
+                    })
+
+
+                })
+
         })
 
     })

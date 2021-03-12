@@ -119,9 +119,14 @@ const queries = require('./db_funcs')
                 socket.on('searchFileByUser', received_data=>{
                     const user_id = received_data.user_id
                     const search = received_data.search
-                    connection.query(`SELECT * FROM vw_uploads WHERE receiver_name LIKE '%${search}%' AND sender_id <> ${user_id}`,
+                    connection.query(`SELECT *,DATE(upload_datetime) as upload_date, HOUR(upload_datetime) as upload_hour, MINUTE(upload_datetime) as upload_minute 
+                    FROM vw_uploads WHERE receiver_name LIKE '%${search}%' AND sender_id = ${user_id} ORDER BY upload_datetime DESC`,
                     (err, rows, fields)=>{
-                        
+                        if(err){
+                            console.log('Ocorreu um erro: ' + err)
+                            return
+                        }
+                        socket.emit('renderFilesUploaded', rows)
                     })
 
                 })

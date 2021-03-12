@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="/work/render_file/style.css">
+
+{{#if boolean_sender_file}}
+    <h1 id="titApresentationFile">
+        Olá {{user.first_name}}, o arquivo {{file.file_formated_name}}
+        foi enviado por você para {{file.receiver_name}}
+    </h1>
+
+{{else}}
+
+    <h1 id="titApresentationFile">
+        Olá {{user.first_name}}, o arquivo {{file.file_formated_name}} foi enviado de {{file.sender_name}}
+        para você
+    </h1>
+
+{{/if}}
+
+
+<div id="showFile" class="card card-body regular shadow">
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<script src="/work/render_file/scripts.js"></script>
